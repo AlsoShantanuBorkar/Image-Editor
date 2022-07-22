@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif;    
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background:  linear-gradient(#e66465, #eec3ab);
+}
+
+.container{
+    width: 850px;
+    background: white;
+    box-shadow: 0 10px 20px rgba(240, 0, 0, 0.226);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    
+} 
+
+.container.disable :where(.editor-panel){
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+
+.container h2{
+font-size: 1.3rem;
+font-weight: 500;
+text-align: center;
+}
+
+
+.container .wrapper{
+    display: flex;
+    margin: 1.25rem;
+    min-height: 335px;
+}
+
+.wrapper .editor-panel{
+    width: 280px;
+    padding:1rem 1.25rem ;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+}
+
+
+.editor-panel .title{
+    display: block;
+    font-size: 1rem;
+    margin-bottom: .75rem;
+}
+
+
+.editor-panel .options, .controls{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.editor-panel button{
+    height: 2.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.editor-panel .filter button{
+    width: calc(100%/2 - 4px);
+}
+
+button:hover{
+    background-color: #f5d8d8;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.034);
+    transition-duration: 0.4s;
+}
+
+button.active{
+    background: #f5d8d8;
+    color: #ff5900
+
+}
+
+.editor-panel .rotate button{
+    width: calc(100%/4 - 3px);
+}
+
+.filter .slider{
+    margin-top: 0.75rem;
+}
+
+.editor-panel .rotate{
+    margin-top: 1rem;
+}
+
+.filter .slider .filter-info{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.filter .slider input{
+    width: 100%;
+    height: 0.3rem;
+    accent-color:  #ff3c00;
+}
+
+.rotate button:nth-child(3){
+font-size: 1rem;
+}
+.rotate button:nth-child(4){
+    font-size: 1rem;
+}
+
+.wrapper .preview-img{
+    flex-grow: 1;
+    display: flex;
+    margin-left: 1.25rem;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1.25rem;
+    overflow: hidden;
+}
+
+.preview-img img{
+    max-height: 335px;
+    max-width: 490px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.controls button{
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    border: transparent;
+    color: #6c757d;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+@media screen and (max-width: 760px) {
+    .container{
+        padding: 1.5rem;
+    }
+    .container .wrapper{
+        flex-wrap: wrap-reverse;
+    }
+    .wrapper .editor-panel{
+        width: 100%;
+    }
+    .wrapper .preview-img{
+        width: 100%;
+        margin: 0 0 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .controls button{
+        width: 100%;
+        margin-bottom: 0.625rem;
+    }
+
+    .controls .row{
+        width: 100%;
+    }
+}
